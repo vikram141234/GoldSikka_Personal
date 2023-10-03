@@ -69,7 +69,13 @@ public class SchemesPage {
 	public WebElement getPreviousBtn() {
 		return PreviousBtn;
 	}
+	
 	//Business Library
+	
+	public void subscribeAScheme()
+	{
+		SubscribeBtn.click();
+	}
 	
 	
 	

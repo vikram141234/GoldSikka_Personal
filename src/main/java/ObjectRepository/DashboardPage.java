@@ -95,7 +95,7 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	/**
 	 * This Method will click on Org link
 	 */
-	public void clickOnPowerBtn(WebDriver driver)
+	public void logoutOfApplication(WebDriver driver)
 	{	
 		PowerBtn.click();
 		driver.switchTo().alert().accept();

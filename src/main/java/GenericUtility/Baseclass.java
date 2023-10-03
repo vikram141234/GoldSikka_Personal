@@ -1,11 +1,15 @@
 package GenericUtility;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -35,18 +39,28 @@ public class Baseclass {
 		{  
 			String BROWSER = pUtility.readDataFromPropertyFile("browser");
 			String URL = pUtility.readDataFromPropertyFile("url");
-			ChromeOptions options=new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
+			
+			
+//			System.setProperty("webdriver.chrome.driver", "V:\\Selenium Drivers2\\chromedriver.exe");
+			
 			if(BROWSER.equalsIgnoreCase("Chrome"))
 			{
+				ChromeOptions options=new ChromeOptions();
+				options.addArguments("--remote-allow-origins=*");
 				WebDriverManager.chromedriver().setup();
 				driver=new ChromeDriver(options);
 				System.out.println("Chrome Browser Launched Successfully");
 			}
 			else if(BROWSER.equalsIgnoreCase("Firefox"))
 			{
-				WebDriverManager.firefoxdriver().setup();
-				driver=new FirefoxDriver(); 
+				
+				FirefoxOptions optionss = new FirefoxOptions();
+				optionss.setProfile(new FirefoxProfile());
+				optionss.addPreference("dom.webnotifications.enabled", false);
+
+			    
+			    WebDriverManager.firefoxdriver().setup();
+				driver=new FirefoxDriver(optionss); 
 				System.out.println("Firefox Browser Launched Successfully");
 			}
 			else 
@@ -60,7 +74,7 @@ public class Baseclass {
 		}
 		
 	@BeforeMethod 
-		public void bmConfig() throws IOException
+		public void bmConfig() throws IOException, Exception
 		{
 		    String USERNAME = pUtility.readDataFromPropertyFile("username");
 			LoginPage lPage=new LoginPage(driver);

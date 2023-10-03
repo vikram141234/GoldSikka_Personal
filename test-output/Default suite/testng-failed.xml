@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sample.PomExampleScriptBookingAccount">
+      <class name="Sample.PomExampleScriptScheme">
         <methods>
+          <include name="createScheme"/>
           <include name="acConfig"/>
           <include name="amConfig"/>
-          <include name="bmConfig"/>
           <include name="bcConfig"/>
-          <include name="addingAmountIntoBookingAccount"/>
+          <include name="bmConfig"/>
           <include name="bsConfig"/>
           <include name="asConfig"/>
         </methods>
-      </class> <!-- Sample.PomExampleScriptBookingAccount -->
+      </class> <!-- Sample.PomExampleScriptScheme -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
