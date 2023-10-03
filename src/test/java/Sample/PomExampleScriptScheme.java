@@ -35,8 +35,8 @@ public class PomExampleScriptScheme extends Baseclass {
 	Schemes_GoldplusplanPage sgPage = new Schemes_GoldplusplanPage(driver);
 	sgPage.goldplusPlanSubscription(driver);
 	
-	DashboardPage dPage = new DashboardPage(driver);
-	dPage.logoutOfApplication(driver);
+	DashboardPage dPage = new DashboardPage(driver); //Power button element problem wanted to check 
+	dPage.clickOnPowerBtn(driver);  //alert not coming due to browser change and power button not working have to find again in dashboard page
 /*	
 	driver.findElement(By.xpath("//img[@src='../../../assets/imgs/goldplus.png']")).click();
 	WebElement amount = driver.findElement(By.xpath("//select[@formcontrolname='amount']"));

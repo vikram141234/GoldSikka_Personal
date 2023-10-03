@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,8 +23,8 @@ public class CreateAnAccountLoginCreateSchemeLogout {
 	@Test
 	public void createAnAccountLoginCreateSchemeLogout() throws InterruptedException, AWTException
 	{
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://stg-new-wallet.goldsikka.com/");
@@ -63,16 +64,18 @@ public class CreateAnAccountLoginCreateSchemeLogout {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[.='I Agree to Terms & Conditions']/../..//input[@type='checkbox']"))).click();
 		
 		r.keyPress(KeyEvent.VK_PAGE_DOWN);
-		
+		while (true)
+		{
 		try 
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']"))).click();
+			break;
 		} 
 		catch (Exception e) 
 		{
 			r.keyPress(KeyEvent.VK_PAGE_DOWN);
 		}
-		
+		}
 		driver.findElement(By.xpath("//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']")).click();
 		
 //		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='input-one-click-checkout phone-field-one-click-checkout main svelte-dau4sx']"))).sendKeys("8686184458");
