@@ -26,10 +26,6 @@ public class PomExampleScriptScheme extends Baseclass {
 	@Test
 	public void createScheme() throws Exception  {
 	
-	Scanner sc = new Scanner(System.in);
-	String  BankName = sc.next();
-	System.out.println("Enter Bank Name");
-	
 	LandingPage lanp = new LandingPage(driver);
 	lanp.clickOnSchemesLnk();
 	
@@ -37,7 +33,7 @@ public class PomExampleScriptScheme extends Baseclass {
 	sPage.subscribeAScheme();
 	
 	Schemes_GoldplusplanPage sgPage = new Schemes_GoldplusplanPage(driver);
-	sgPage.goldplusPlanSubscription(driver, BankName);
+	sgPage.goldplusPlanSubscription(driver);
 	
 				
 	
