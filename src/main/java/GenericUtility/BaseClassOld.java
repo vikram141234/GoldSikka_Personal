@@ -79,7 +79,7 @@ public class BaseClassOld {
 		public void amConfig()
 		{
 		    DashboardPage dPage=new DashboardPage(driver);
-			dPage.clickOnPowerBtn(driver);
+//			dPage.clickOnPowerBtn(driver);
 			System.out.println("Logout Successfully");
 		}
 //	@AfterTest  //View Details at Before Class Annotation

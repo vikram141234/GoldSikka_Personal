@@ -13,7 +13,7 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	
 	@FindBy(xpath="//ul[@class='user-nav ng-tns-c39-0']/li/following-sibling::li//span[.='admin']")private WebElement AdminLnk;
 	
-	@FindBy(xpath="//img[@src='../../../assets/imgs/power (2) 1.png']")private WebElement PowerBtn;
+	@FindBy(xpath="//button[@class='btn mt-3 ng-tns-c50-1']/../following-sibling::div[3]")private WebElement PowerBtn;
 	
 	@FindBy(xpath="//img[@src='../../../assets/imgs/Heart.png']")private WebElement WishlistBtn;
 	
@@ -94,9 +94,11 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	//Business Library - To optimize the test script
 	/**
 	 * This Method will click on Org link
+	 * @throws Exception 
 	 */
-	public void clickOnPowerBtn(WebDriver driver)
+	public void logoutOfApplication(WebDriver driver) throws Exception
 	{	
+		Thread.sleep(2000);
 		PowerBtn.click();
 		driver.switchTo().alert().accept();
 	}

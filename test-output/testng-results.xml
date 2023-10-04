@@ -2,62 +2,36 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-03T18:25:23 IST" name="Default suite" finished-at="2023-10-03T18:25:55 IST" duration-ms="31456">
+  <suite started-at="2023-10-04T17:28:35 IST" name="Default suite" finished-at="2023-10-04T17:28:57 IST" duration-ms="22359">
     <groups>
     </groups>
-    <test started-at="2023-10-03T18:25:23 IST" name="Default test" finished-at="2023-10-03T18:25:55 IST" duration-ms="31456">
+    <test started-at="2023-10-04T17:28:35 IST" name="Default test" finished-at="2023-10-04T17:28:57 IST" duration-ms="22359">
       <class name="Sample.PomExampleScriptScheme">
-        <test-method is-config="true" signature="bsConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:23 IST" name="bsConfig" finished-at="2023-10-03T18:25:23 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="bsConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:35 IST" name="bsConfig" finished-at="2023-10-04T17:28:35 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bsConfig -->
-        <test-method is-config="true" signature="bcConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:23 IST" name="bcConfig" finished-at="2023-10-03T18:25:32 IST" duration-ms="9175" status="PASS">
+        <test-method is-config="true" signature="bcConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:35 IST" name="bcConfig" finished-at="2023-10-04T17:28:46 IST" duration-ms="10820" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bcConfig -->
-        <test-method is-config="true" signature="bmConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:32 IST" name="bmConfig" finished-at="2023-10-03T18:25:32 IST" duration-ms="91" status="PASS">
+        <test-method is-config="true" signature="bmConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:46 IST" name="bmConfig" finished-at="2023-10-04T17:28:46 IST" duration-ms="99" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bmConfig -->
-        <test-method signature="createScheme()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:32 IST" name="createScheme" finished-at="2023-10-03T18:25:55 IST" duration-ms="22127" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="createScheme()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:46 IST" name="createScheme" finished-at="2023-10-04T17:28:55 IST" duration-ms="9334" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Element <img class="mobile-res-img ng-tns-c50-1" src="../../../assets/imgs/power (2) 1.png"> is not clickable at point (1859,33) because another element <iframe class="razorpay-checkout-frame" src="https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=e8ec6b71c60aa7f85aec912af4ab73922d91b790&modern=1&unified_lite=1"> obscures it
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [238e3632-0166-4ee7-bf7e-d618bf3db238, clickElement {id=920af8ab-e8a2-4181-b6da-51dfb08f1101}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 118.0.1, moz:accessibilityChecks: false, moz:buildID: 20230927232528, moz:debuggerAddress: 127.0.0.1:41227, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19696, moz:profile: C:\Users\admin\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:41227/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on windows (238e3632-0166-4ee7-bf7e-d618bf3db238)] -> xpath: //img[@src='../../../assets/imgs/power (2) 1.png']]
-Session ID: 238e3632-0166-4ee7-bf7e-d618bf3db238]]>
+              <![CDATA[java.lang.IllegalAccessException: Can not set static final org.openqa.selenium.WebElement field ObjectRepository.Schemes_GoldplusplanPage.BankNameLnk to jdk.proxy2.$Proxy20]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <img class="mobile-res-img ng-tns-c50-1" src="../../../assets/imgs/power (2) 1.png"> is not clickable at point (1859,33) because another element <iframe class="razorpay-checkout-frame" src="https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=e8ec6b71c60aa7f85aec912af4ab73922d91b790&modern=1&unified_lite=1"> obscures it
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [238e3632-0166-4ee7-bf7e-d618bf3db238, clickElement {id=920af8ab-e8a2-4181-b6da-51dfb08f1101}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 118.0.1, moz:accessibilityChecks: false, moz:buildID: 20230927232528, moz:debuggerAddress: 127.0.0.1:41227, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19696, moz:profile: C:\Users\admin\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:41227/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on windows (238e3632-0166-4ee7-bf7e-d618bf3db238)] -> xpath: //img[@src='../../../assets/imgs/power (2) 1.png']]
-Session ID: 238e3632-0166-4ee7-bf7e-d618bf3db238
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
-at ObjectRepository.DashboardPage.clickOnPowerBtn(DashboardPage.java:100)
-at Sample.PomExampleScriptScheme.createScheme(PomExampleScriptScheme.java:39)
+              <![CDATA[java.lang.RuntimeException: java.lang.IllegalAccessException: Can not set static final org.openqa.selenium.WebElement field ObjectRepository.Schemes_GoldplusplanPage.BankNameLnk to jdk.proxy2.$Proxy20
+at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:115)
+at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:101)
+at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:88)
+at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:76)
+at ObjectRepository.Schemes_GoldplusplanPage.<init>(Schemes_GoldplusplanPage.java:77)
+at Sample.PomExampleScriptScheme.createScheme(PomExampleScriptScheme.java:35)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -84,21 +58,28 @@ at org.testng.TestNG.run(TestNG.java:1067)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalAccessException: Can not set static final org.openqa.selenium.WebElement field ObjectRepository.Schemes_GoldplusplanPage.BankNameLnk to jdk.proxy2.$Proxy20
+at java.base/jdk.internal.reflect.FieldAccessorImpl.throwFinalFieldIllegalAccessException(FieldAccessorImpl.java:137)
+at java.base/jdk.internal.reflect.FieldAccessorImpl.throwFinalFieldIllegalAccessException(FieldAccessorImpl.java:141)
+at java.base/jdk.internal.reflect.MethodHandleObjectFieldAccessorImpl.set(MethodHandleObjectFieldAccessorImpl.java:103)
+at java.base/java.lang.reflect.Field.set(Field.java:820)
+at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:113)
+... 31 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createScheme -->
-        <test-method is-config="true" signature="amConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:55 IST" name="amConfig" finished-at="2023-10-03T18:25:55 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="amConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:55 IST" name="amConfig" finished-at="2023-10-04T17:28:57 IST" duration-ms="2063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amConfig -->
-        <test-method is-config="true" signature="acConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:55 IST" name="acConfig" finished-at="2023-10-03T18:25:55 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="acConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:57 IST" name="acConfig" finished-at="2023-10-04T17:28:57 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- acConfig -->
-        <test-method is-config="true" signature="asConfig()[pri:0, instance:Sample.PomExampleScriptScheme@909217e]" started-at="2023-10-03T18:25:55 IST" name="asConfig" finished-at="2023-10-03T18:25:55 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="asConfig()[pri:0, instance:Sample.PomExampleScriptScheme@68c9133c]" started-at="2023-10-04T17:28:57 IST" name="asConfig" finished-at="2023-10-04T17:28:57 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- asConfig -->

@@ -4,6 +4,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,6 +17,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+
+import ObjectRepository.DashboardPage;
 import ObjectRepository.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -83,10 +86,10 @@ public class Baseclass {
 		}
 
 	@AfterMethod 
-		public void amConfig()
+		public void amConfig() throws Exception
 		{
-//		    DashboardPage dPage=new DashboardPage(driver);
-//			dPage.clickOnPowerBtn(driver);
+		    DashboardPage dPage=new DashboardPage(driver);
+			dPage.logoutOfApplication(driver);
 			System.out.println("Logout Successfully");
 		}
 

@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -200,6 +201,43 @@ public class WebDriverUtility {
 	{
 		driver.switchTo().frame(index);
 	}
+	
+//	public void WaitUntilElementVisibleAndPerformClickAction(WebDriver driver, WebElement element) throws AWTException
+//	{
+//		while(true)
+//		{
+//			try 
+//			{
+//				driver.findElement(By.xpath(element));
+//				element.click();
+//			    break;
+//			} 
+//			catch (Exception e) 
+//			{
+//				Robot r = new Robot();
+//				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+//			}
+//		}
+//	}
+//	
+//	public void waitUntilFrameVisibleAndSwitch(WebDriver driver,WebElement frame) 
+//	{
+//		while(true)
+//		{
+//		try 
+//		{
+//			WebDriverWait wait
+//			(driver, frame);
+//			driver.switchTo().frame(frame);
+//			break;
+//		} 
+//		catch (Exception e) 
+//		{
+//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//		}}
+//		
+//	}
+	
 	
 	/**
 	 * This method will handle frame based on name or id
