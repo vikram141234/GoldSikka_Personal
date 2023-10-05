@@ -104,7 +104,7 @@ public class BookingAccountPage {
 		public void depositMoneyInBookingAccount(WebDriver driver) throws InterruptedException
 		{
 			Thread.sleep(2000);
-			AmountTxt.sendKeys("5000");
+			AmountTxt.sendKeys("100000");
 			SubmitBtn.click();	
 		}
 		

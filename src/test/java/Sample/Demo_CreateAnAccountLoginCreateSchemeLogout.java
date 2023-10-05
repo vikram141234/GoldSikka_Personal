@@ -50,7 +50,7 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME,Keys.ENTER);
 		Thread.sleep(2000);
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[.='Schemes']"))).click();
 		
 //		driver.findElement(By.xpath("//span[.='Schemes']")).click();

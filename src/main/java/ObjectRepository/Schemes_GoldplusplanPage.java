@@ -16,153 +16,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import GenericUtility.WebDriverUtility;
 
 public class Schemes_GoldplusplanPage {
-
-	
-    private static final WebElement BankNameLnk = null;
-
-	@FindBy(xpath="//select[@formcontrolname='amount']")private WebElement AmountDrpDwn;
-    
-    @FindBy(xpath="//select[@placeholder='Months']")private WebElement MonthsDrpDwn;
-    
-    @FindBy(xpath="//p[.='Use Booking Account']/../..//div/input[@type='checkbox']")private WebElement UseBookingAccountCheckBox;
-    
-    @FindBy(xpath="//input[@placeholder='Enter amount']")private WebElement EnterAmountEdt;
-    
-    @FindBy(xpath="//input[@formcontrolname='agree']")private WebElement TermsAndConditionsCheckBox;
-    
-    @FindBy(xpath="//input[@placeholder='Enter coupon code']")private WebElement CouponCodeEdt;
-    
-    @FindBy(xpath="//span[.=' Coupon List ']")private WebElement CouponCodeListButton;
-    
-    @FindBy(xpath="//button[.='Apply']")private WebElement ApplyBtn;
-    
-    //Here Scroll Down//input[@placeholder='Enter coupon code']
-    
-    @FindBy(xpath="//input[@placeholder='Enter Referral Code']")private WebElement ReferralCodeEdt;
-    
-    @FindBy(xpath="//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']")private WebElement StartSubscriptionBtn;
-	
-    @FindBy(xpath="//iframe[@class='razorpay-checkout-frame']")private WebElement AfterClickOnStartSubscriptionBtnFrame;
-    
-    @FindBy(xpath="//input[@id='contact']")private WebElement MobileNumberEdt;
-    
-    @FindBy(xpath="//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")private WebElement ProceedBtn;
-    
-    @FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
-    
-    @FindBy(xpath="//label[@for='bank-radio-ICIC']")private WebElement IciciBankLnk;
-    
-    @FindBy(xpath="//div[.='Axis']")private WebElement AxisBankLnk;
-    
-    @FindBy(xpath="//div[.='HDFC']")private WebElement HdfcBankLnk;
-    
-    @FindBy(xpath="//div[.='Kotak']")private WebElement KotakBankLnk;
-    
-    @FindBy(xpath="//div[.='Yes Bank']")private WebElement YesBankLnk;
-    
-    @FindBy(xpath="//div[.='BOB']")private WebElement BOBBankLnk;
-  
-    @FindBy(xpath="//div[@class='svelte-3qevvl']")private WebElement BankServerIssueLnk;
-    
-    @FindBy(xpath="//button[@class='cta-btn svelte-n4r70l']")private WebElement BankServerIssueContinueBtn;
-    
-   	@FindBy(xpath="//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']")private WebElement PayNowBtn;
-   	
-   	@FindBy(xpath="//button[.='Success']")private WebElement WindowSuccessBtn;
-    
-    //Constructors
-    
-	public Schemes_GoldplusplanPage(WebDriver driver)
-	{
-		PageFactory.initElements(driver, this);
-	}
-
-	//Getters
-	
-	public WebElement getAmountDrpDwn() {
-		return AmountDrpDwn;
-	}
-
-	public WebElement getMonthsDrpDwn() {
-		return MonthsDrpDwn;
-	}
-
-	public WebElement getUseBookingAccountCheckBox() {
-		return UseBookingAccountCheckBox;
-	}
-
-	public WebElement getEnterAmountEdt() {
-		return EnterAmountEdt;
-	}
-
-	public WebElement getTermsAndConditionsCheckBox() {
-		return TermsAndConditionsCheckBox;
-	}
-
-	public WebElement getCouponCodeEdt() {
-		return CouponCodeEdt;
-	}
-
-	public WebElement getCouponCodeListButton() {
-		return CouponCodeListButton;
-	}
-
-	public WebElement getApplyBtn() {
-		return ApplyBtn;
-	}
-
-	public WebElement getReferralCodeEdt() {
-		return ReferralCodeEdt;
-	}
-
-	public WebElement getStartSubscriptionBtn() {
-		return StartSubscriptionBtn;
-	}
-	
-	public WebElement getAfterClickOnStartSubscriptionBtnFrame() {
-		return AfterClickOnStartSubscriptionBtnFrame;
-	}
-
-	public WebElement getMobileNumberEdt() {
-		return MobileNumberEdt;
-	}
-
-	public WebElement getProceedBtn() {
-		return ProceedBtn;
-	}
-
-	public WebElement getNetBankingLnk() {
-		return NetBankingLnk;
-	}
-
-	public WebElement getIciciBankLnk() {
-		return IciciBankLnk;
-	}
-	
-	public WebElement getBankServerIssueContinueBtn() {
-		return BankServerIssueContinueBtn;
-	}
-
-	public WebElement getPayNowBtn() {
-		return PayNowBtn;
-	}
-
-	public WebElement getWindowSuccessBtn() {
-		return WindowSuccessBtn;
-	}
-
-	
-	//Business Libraries
+   
+    //Business Libraries
 
 	public void goldplusPlanSubscription(WebDriver driver) throws Exception
 	{
 				
 		Select s = new Select(AmountDrpDwn);
-		s.selectByValue("9500");
+		s.selectByValue("1000");
 		Select ss = new Select(MonthsDrpDwn);
 		ss.selectByVisibleText("12 Months");
 		UseBookingAccountCheckBox.click();
-		EnterAmountEdt.sendKeys("9500");
+		EnterAmountEdt.sendKeys("1000");
 		TermsAndConditionsCheckBox.click();
 		
 		while(true)
@@ -191,7 +56,7 @@ public class Schemes_GoldplusplanPage {
 		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk));
 		NetBankingLnk.click();
 		
-		IciciBankLnk.click();
+		KotakBankLnk.click();
 		
 		//If bank server issue will arise uncomment below code
 //		try 

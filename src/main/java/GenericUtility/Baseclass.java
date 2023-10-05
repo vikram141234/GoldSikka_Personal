@@ -44,7 +44,6 @@ public class Baseclass {
 			String URL = pUtility.readDataFromPropertyFile("url");
 			
 			
-//			System.setProperty("webdriver.chrome.driver", "V:\\Selenium Drivers2\\chromedriver.exe");
 			
 			if(BROWSER.equalsIgnoreCase("Chrome"))
 			{
@@ -79,7 +78,7 @@ public class Baseclass {
 	@BeforeMethod 
 		public void bmConfig() throws IOException, Exception
 		{
-		    String USERNAME = pUtility.readDataFromPropertyFile("usernamee");
+		    String USERNAME = pUtility.readDataFromPropertyFile("loginnum");
 			LoginPage lPage=new LoginPage(driver);
 			lPage.loginToApplication(USERNAME);
 			System.out.println("---Login successfully---");
@@ -97,7 +96,7 @@ public class Baseclass {
 		public void acConfig()
 		{
 //			driver.quit();
-			System.out.println("Browser Closed Successfully");
+//			System.out.println("Browser Closed Successfully");
 		}
 	
 	

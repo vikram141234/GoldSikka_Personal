@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import GenericUtility.Baseclass;
 import GenericUtility.WebDriverUtility;
 import ObjectRepository.DashboardPage;
+import ObjectRepository.GoldPlusPlanPage;
 import ObjectRepository.LandingPage;
 import ObjectRepository.SchemesPage;
 import ObjectRepository.Schemes_GoldplusplanPage;
@@ -27,15 +28,16 @@ public class PomExampleScriptScheme extends Baseclass {
 	public void createScheme() throws Exception  {
 	
 	LandingPage lanp = new LandingPage(driver);
-	lanp.clickOnSchemesLnk();
+	lanp.clickOnSchemesLnk(driver);
 	
 	SchemesPage sPage = new SchemesPage(driver);
 	sPage.subscribeAScheme();
 	
-	Schemes_GoldplusplanPage sgPage = new Schemes_GoldplusplanPage(driver);
-	sgPage.goldplusPlanSubscription(driver);
+    GoldPlusPlanPage gPage = new GoldPlusPlanPage(driver);
+    gPage.goldPlusPlanPage(driver);
 	
-				
+    
+    
 	
 	}
 	
