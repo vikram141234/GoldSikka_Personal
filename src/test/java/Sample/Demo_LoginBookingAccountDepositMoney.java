@@ -1,29 +1,47 @@
 package Sample;
 
-
-
-	import java.time.Duration;
-	import java.util.Set;
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.Keys;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
-	import org.openqa.selenium.support.ui.WebDriverWait;
-
+import java.time.Duration;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import GenericUtility.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-	public class LoginBookingAccountDepositMoney {
+	public class Demo_LoginBookingAccountDepositMoney {
 
-		public static void main(String[] args) throws InterruptedException {
+		public static void main(String[] args) throws InterruptedException, Exception {
 			
-			WebDriverManager.chromedriver().setup();
-			WebDriver driver = new ChromeDriver();
+			PropertyFileUtility pUtil = new PropertyFileUtility();
+			String BROWSER = pUtil.readDataFromPropertyFile("browser");
+			String USERNAME = pUtil.readDataFromPropertyFile("usernamee");
+			
+			WebDriver driver = null;
+			
+			if(BROWSER.equalsIgnoreCase("Chrome"))
+			{
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+			}
+			else if(BROWSER.equalsIgnoreCase("Firefox"))
+			{
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();
+			}
+			else 
+			{
+				System.out.println("");
+			}
+			
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://stg-new-wallet.goldsikka.com/");
-			driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys("9100345025",Keys.ENTER);
+			driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME,Keys.ENTER);
 			driver.findElement(By.xpath("//span[.='Booking Account']")).click();
 			driver.findElement(By.xpath("//input[@placeholder='Enter Amount']")).sendKeys("5000",Keys.ENTER);
 			WebElement element = driver.findElement(By.xpath("//iframe[contains(@style,'op')]"));

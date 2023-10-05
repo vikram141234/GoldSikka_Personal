@@ -79,7 +79,7 @@ public class Baseclass {
 	@BeforeMethod 
 		public void bmConfig() throws IOException, Exception
 		{
-		    String USERNAME = pUtility.readDataFromPropertyFile("username");
+		    String USERNAME = pUtility.readDataFromPropertyFile("usernamee");
 			LoginPage lPage=new LoginPage(driver);
 			lPage.loginToApplication(USERNAME);
 			System.out.println("---Login successfully---");

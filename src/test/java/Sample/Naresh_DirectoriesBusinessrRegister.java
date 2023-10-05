@@ -18,7 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import GenericUtility.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DirectoriesBusinessrRegister {
+public class Naresh_DirectoriesBusinessrRegister {
 
 		public static void main(String[] args) throws AWTException, Exception {
 			

@@ -3,6 +3,7 @@ package Sample;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -16,20 +17,37 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import GenericUtility.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CreateAnAccountLoginCreateSchemeLogout {
+public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 
 	@Test
-	public void createAnAccountLoginCreateSchemeLogout() throws InterruptedException, AWTException
+	public void createAnAccountLoginCreateSchemeLogout() throws InterruptedException, AWTException, Exception
 	{
-		WebDriverManager.firefoxdriver().setup();
-		WebDriver driver = new FirefoxDriver();
+		PropertyFileUtility pUtil = new PropertyFileUtility();
+		String BROWSER = pUtil.readDataFromPropertyFile("browser");
+		String USERNAME = pUtil.readDataFromPropertyFile("usernamee");
+		
+		WebDriver driver = null;
+		
+		if(BROWSER.equalsIgnoreCase("Chrome"))
+		{
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+		else if (BROWSER.equalsIgnoreCase("Firefox")) 
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
+		
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://stg-new-wallet.goldsikka.com/");
 		
-		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys("9100345025",Keys.ENTER);
+		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME,Keys.ENTER);
 		Thread.sleep(2000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
