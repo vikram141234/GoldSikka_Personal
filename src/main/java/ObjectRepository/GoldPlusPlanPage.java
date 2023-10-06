@@ -1,6 +1,5 @@
 package ObjectRepository;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
@@ -217,7 +216,7 @@ public class GoldPlusPlanPage {
 
 
 
-	public void goldPlusPlanPage(WebDriver driver) throws AWTException
+	public void goldPlusPlanPage(WebDriver driver) throws Exception
 	{
 		Select s = new Select(AmountDrpDwn);
 		s.selectByValue("1000");
@@ -242,7 +241,7 @@ public class GoldPlusPlanPage {
 				r.keyPress(KeyEvent.VK_PAGE_DOWN);
 			}
 		}
-	
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(AfterClickOnStartSubscriptionBtnFrame));
 		
@@ -251,28 +250,35 @@ public class GoldPlusPlanPage {
 		MobileNumberEdt.sendKeys("8686184458");
 		ProceedBtn.click();
 		
-		Robot r= new Robot();
-		r.keyPress(KeyEvent.VK_PAGE_DOWN);
-		r.keyRelease(KeyEvent.VK_PAGE_DOWN);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk));
-		NetBankingLnk.click();
-		
-		KotakBankLnk.click();
-			
+		while(true)
+		{
+			try {
+				NetBankingLnk.click();
+				break;
+			} catch (Exception e) {
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+				r.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			}
+		}
+		IciciBankLnk.click();
 		String ParentWin = driver.getWindowHandle();
 		PayNowBtn.click();
 		Set<String> ChildWin = driver.getWindowHandles();
 		
-		for(String Childid : ChildWin)
+		for(String Child : ChildWin)
 		{
-			if(!Childid.equals(ParentWin))
+			if(!ParentWin.equals(Child))
 			{
-				driver.switchTo().window(Childid);
-				WindowSuccessBtn.click();
+			   driver.switchTo().window(Child);
 			}
 		}
+		String SuccessMsg = WindowSuccessBtn.getText();
+		System.out.println("Subscription is "+SuccessMsg);
+		WindowSuccessBtn.click();
+		
 		driver.switchTo().window(ParentWin);
+		
 		
 
 	}

@@ -8,10 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import ObjectRepository.DashboardPage;
+
 public class DemoForLogout {
 
 	@Test
-	public void loginLogout() throws InterruptedException
+	public void loginLogout() throws Exception
 	{
 		
 		WebDriver driver = new FirefoxDriver();
@@ -20,8 +22,10 @@ public class DemoForLogout {
 		driver.get("https://stg-new-wallet.goldsikka.com/");
 		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys("9100345025",Keys.ENTER);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//div[@class='ng-tns-c50-1'])[5]")).click();
-		driver.switchTo().alert().accept();
+		DashboardPage dPage = new DashboardPage(driver);
+		dPage.logoutOfApplication(driver);
+//		driver.findElement(By.xpath("(//div[@class='ng-tns-c50-1'])[5]")).click();
+//		driver.switchTo().alert().accept();
 		
 	}
 }

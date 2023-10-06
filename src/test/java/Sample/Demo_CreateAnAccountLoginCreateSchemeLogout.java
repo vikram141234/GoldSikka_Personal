@@ -77,7 +77,7 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 			r.keyPress(KeyEvent.VK_PAGE_DOWN);
 		}
 		
-		driver.findElement(By.xpath("//input[@formcontrolname='enteredWalletAmount']")).sendKeys("5000");
+		driver.findElement(By.xpath("//input[@formcontrolname='enteredWalletAmount']")).sendKeys("9500");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[.='I Agree to Terms & Conditions']/../..//input[@type='checkbox']"))).click();
 		
@@ -97,6 +97,9 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 		driver.findElement(By.xpath("//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']")).click();
 		
 //		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='input-one-click-checkout phone-field-one-click-checkout main svelte-dau4sx']"))).sendKeys("8686184458");
+		WebElement frame = driver.findElement(By.xpath("//iframe[@class='razorpay-checkout-frame']"));
+		
+		driver.switchTo().frame(frame);
 		
 		driver.findElement(By.xpath("//input[@class='input-one-click-checkout phone-field-one-click-checkout main svelte-dau4sx']")).sendKeys("8686184458");
 		

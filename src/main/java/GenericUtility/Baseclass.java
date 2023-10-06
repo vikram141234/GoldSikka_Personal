@@ -1,10 +1,7 @@
 package GenericUtility;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -87,16 +84,16 @@ public class Baseclass {
 	@AfterMethod 
 		public void amConfig() throws Exception
 		{
-		    DashboardPage dPage=new DashboardPage(driver);
-			dPage.logoutOfApplication(driver);
-			System.out.println("Logout Successfully");
+		    DashboardPage dPage = new DashboardPage(driver);
+		    dPage.logoutOfApplication(driver);
+		    System.out.println("Logout Successfully");
 		}
 
 	@AfterClass 
 		public void acConfig()
 		{
 //			driver.quit();
-//			System.out.println("Browser Closed Successfully");
+			System.out.println("Browser Closed Successfully");
 		}
 	
 	

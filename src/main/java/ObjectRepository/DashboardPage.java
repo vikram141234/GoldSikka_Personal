@@ -13,7 +13,7 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	
 	@FindBy(xpath="//ul[@class='user-nav ng-tns-c39-0']/li/following-sibling::li//span[.='admin']")private WebElement AdminLnk;
 	
-	@FindBy(xpath="((//div[@class='ng-tns-c50-1'])[5]")private WebElement PowerBtn;
+	@FindBy(xpath="(//div[@class='ng-tns-c50-1'])[5]")private WebElement PowerBtn;
 	
 	@FindBy(xpath="//img[@src='../../../assets/imgs/Heart.png']")private WebElement WishlistBtn;
 	
