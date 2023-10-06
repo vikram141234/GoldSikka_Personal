@@ -84,16 +84,16 @@ public class Baseclass {
 	@AfterMethod 
 		public void amConfig() throws Exception
 		{
-		    DashboardPage dPage = new DashboardPage(driver);
-		    dPage.logoutOfApplication(driver);
-		    System.out.println("Logout Successfully");
+//		    DashboardPage dPage = new DashboardPage(driver);
+//		    dPage.logoutOfApplication(driver);
+//		    System.out.println("Logout Successfully");
 		}
 
 	@AfterClass 
 		public void acConfig()
 		{
 //			driver.quit();
-			System.out.println("Browser Closed Successfully");
+//			System.out.println("Browser Closed Successfully");
 		}
 	
 	

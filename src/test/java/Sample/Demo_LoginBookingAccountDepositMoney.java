@@ -10,12 +10,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
 import GenericUtility.PropertyFileUtility;
+import ObjectRepository.DashboardPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class Demo_LoginBookingAccountDepositMoney {
-
-		public static void main(String[] args) throws InterruptedException, Exception {
+        
+		@Test
+		public void addingAmountToWallet() throws InterruptedException, Exception {
 			
 			PropertyFileUtility pUtil = new PropertyFileUtility();
 			String BROWSER = pUtil.readDataFromPropertyFile("browser");
@@ -85,6 +89,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 				System.out.println("Amount Not Added Successfully");
 			}
 			driver.switchTo().alert().accept();
+			
+			DashboardPage dPage = new DashboardPage(driver);
+			dPage.logoutOfApplication(driver);
+			
 		}
 		
 	}

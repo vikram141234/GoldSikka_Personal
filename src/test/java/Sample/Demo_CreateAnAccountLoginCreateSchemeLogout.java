@@ -5,10 +5,13 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import GenericUtility.PropertyFileUtility;
+import GenericUtility.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Demo_CreateAnAccountLoginCreateSchemeLogout {
@@ -94,79 +98,50 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 			r.keyPress(KeyEvent.VK_PAGE_DOWN);
 		}
 		}
-		driver.findElement(By.xpath("//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']")).click();
 		
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='input-one-click-checkout phone-field-one-click-checkout main svelte-dau4sx']"))).sendKeys("8686184458");
 		WebElement frame = driver.findElement(By.xpath("//iframe[@class='razorpay-checkout-frame']"));
 		
 		driver.switchTo().frame(frame);
 		
 		driver.findElement(By.xpath("//input[@class='input-one-click-checkout phone-field-one-click-checkout main svelte-dau4sx']")).sendKeys("8686184458");
 		
-//		driver.findElement(By.xpath("//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")).click();
+		driver.findElement(By.xpath("//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")).click();
 		
-//		driver.findElement(By.xpath("//div[.='Netbanking']")).click();
+		driver.findElement(By.xpath("//div[.='Netbanking']")).click();
 		
+		driver.findElement(By.xpath("//label[@for='bank-radio-ICIC']")).click();
 		
+		driver.findElement(By.xpath("//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']")).click();
 		
+		driver.switchTo().defaultContent();
 		
+		String ParentWin = driver.getWindowHandle();
 		
+		Set<String> ChildWins = driver.getWindowHandles();
 		
+		for(String ChildWin : ChildWins)
+		{
+			if(!ChildWin.equals(ParentWin))
+			{
+			    driver.switchTo().window(ChildWin);
+			    driver.findElement(By.xpath("//button[.='Success']")).click();
+			}
+		}
+		Thread.sleep(1000);
+		driver.switchTo().window(ParentWin);
 		
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='col-md-6 second-row-col-six-two ng-tns-c50-1']/div//button[@class='btn mt-3 ng-tns-c50-1'])[4]"));
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()",ele);
 		
 		
-		
-		
+
+		driver.switchTo().alert().accept();
 		
 		
 		
 		
-		
-		
-		
-		
-//		driver.findElement(By.xpath("//div[@class='coupon-text2']/following-sibling::div/button[@type='submit']")).click();
-		
-//		driver.switchTo().alert();	
-//		driver.findElement(By.xpath("//input[@name='contact']")).sendKeys("8686184458");
-		
-//		driver.findElement(By.xpath("//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")).click();
-		
-//		driver.findElement(By.xpath("//div[.='Netbanking']")).click();
-	//	driver.findElement(By.xpath("//input[@name='contact']")).sendKeys("");
-		
-		
-//     All elements are related to this script			
-		
-//		driver.findElement(By.xpath("//span[.=' Coupon List ']")).click();
-//		WebElement page = driver.findElement(By.xpath("//div[@class='ant-modal-body ng-tns-c69-3']"));//pending
-		
-		
-//		driver.switchTo();
-//		driver.findElement(By.xpath("//span[.='Schemes']")).click();
-//		driver.findElement(By.xpath("//span[.='Schemes']")).click();
-//		driver.findElement(By.xpath("//span[.='Schemes']")).click();
-//		driver.findElement(By.xpath("//span[.='Schemes']")).click();
+			
 	}
 }
