@@ -1,10 +1,12 @@
-package Sample;
+package Sprint_1;
 
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
@@ -15,8 +17,10 @@ public class DemoForLogout {
 	@Test
 	public void loginLogout() throws Exception
 	{
-		
-		WebDriver driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\admin\\Desktop\\ChromeDrivers");
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("remote--allow-origins=*");
+		WebDriver driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://stg-new-wallet.goldsikka.com/");

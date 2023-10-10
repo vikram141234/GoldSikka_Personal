@@ -1,4 +1,4 @@
-package Sample;
+package Sprint_1;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -30,6 +30,7 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 	public void createAnAccountLoginCreateSchemeLogout() throws InterruptedException, AWTException, Exception
 	{
 		PropertyFileUtility pUtil = new PropertyFileUtility();
+		String URL = pUtil.readDataFromPropertyFile("url");
 		String BROWSER = pUtil.readDataFromPropertyFile("browser");
 		String USERNAME = pUtil.readDataFromPropertyFile("usernamee");
 		
@@ -49,15 +50,13 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://stg-new-wallet.goldsikka.com/");
+		driver.get(URL);
 		
 		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME,Keys.ENTER);
 		Thread.sleep(2000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[.='Schemes']"))).click();
-		
-//		driver.findElement(By.xpath("//span[.='Schemes']")).click();
 		
 		driver.findElement(By.xpath("//img[@src='../../../assets/imgs/goldplus.png']")).click();
 		WebElement amount = driver.findElement(By.xpath("//select[@formcontrolname='amount']"));
@@ -68,8 +67,6 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 		months.click();
 		Select s1 = new Select(months);
 		s1.selectByVisibleText("12 Months");
-		
-//		driver.findElement(By.xpath("//p[.='Use Booking Account']/../..//div/input[@type='checkbox']")).click();
 		
 		Robot r = new Robot();
 		try 
@@ -127,16 +124,13 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 			    driver.findElement(By.xpath("//button[.='Success']")).click();
 			}
 		}
-		Thread.sleep(1000);
+		
 		driver.switchTo().window(ParentWin);
 		
 		WebElement ele = driver.findElement(By.xpath("(//div[@class='col-md-6 second-row-col-six-two ng-tns-c50-1']/div//button[@class='btn mt-3 ng-tns-c50-1'])[4]"));
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click()",ele);
-		
-		
-
 		driver.switchTo().alert().accept();
 		
 		

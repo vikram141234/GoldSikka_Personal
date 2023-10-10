@@ -1,4 +1,4 @@
-package Sample;
+package Sprint_1;
 
 import java.io.FileInputStream;
 import java.time.Duration;
@@ -20,9 +20,12 @@ public class PomExampleScriptBookingAccount extends Baseclass {
 		@Test
 		public void addingAmountIntoBookingAccount() throws Exception
 		{
-			LandingPage lanp = new LandingPage(driver);
-			lanp.clickOnBookingAccountLnk();
+			LandingPage lPage = new LandingPage(driver);
+			System.out.println("Before adding amount to booking account");
+			lPage.clickOnBookingAccountLnk(driver);
 	        
+//			lPage.viewBookingAccountBalance(driver);
+			
 			BookingAccountPage bap = new BookingAccountPage(driver);
 			bap.depositMoneyInBookingAccount(driver);
 			
@@ -65,6 +68,10 @@ public class PomExampleScriptBookingAccount extends Baseclass {
 				System.out.println("Amount Not Added Successfully");
 			}
 			driver.switchTo().alert().accept();
+			
+
+			System.out.println("After adding amount to booking account");
+			lPage.clickOnBookingAccountLnk(driver);
 
 		}
 	}	

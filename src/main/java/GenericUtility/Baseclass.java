@@ -52,14 +52,21 @@ public class Baseclass {
 			}
 			else if(BROWSER.equalsIgnoreCase("Firefox"))
 			{
-				
-				FirefoxOptions optionss = new FirefoxOptions();
-				optionss.setProfile(new FirefoxProfile());
-				optionss.addPreference("dom.webnotifications.enabled", false);
+				FirefoxOptions options = new FirefoxOptions();
+
+		        // Create a FirefoxProfile to manage preferences
+		        FirefoxProfile profile = new FirefoxProfile();
+
+		        // Set a preference to allow or deny location access (false to deny)
+		        profile.setPreference("geo.prompt.testing", true);
+		        profile.setPreference("geo.prompt.testing.allow", false);
+
+		        // Assign the profile to the FirefoxOptions
+		        options.setProfile(profile);
 
 			    
 			    WebDriverManager.firefoxdriver().setup();
-				driver=new FirefoxDriver(optionss); 
+				driver=new FirefoxDriver(options); 
 				System.out.println("Firefox Browser Launched Successfully");
 			}
 			else 
@@ -84,9 +91,9 @@ public class Baseclass {
 	@AfterMethod 
 		public void amConfig() throws Exception
 		{
-//		    DashboardPage dPage = new DashboardPage(driver);
-//		    dPage.logoutOfApplication(driver);
-//		    System.out.println("Logout Successfully");
+		    DashboardPage dPage = new DashboardPage(driver);
+		    dPage.logoutOfApplication(driver);
+		    System.out.println("Logout Successfully");
 		}
 
 	@AfterClass 

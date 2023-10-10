@@ -1,5 +1,6 @@
 package ObjectRepository;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,8 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	@FindBy(xpath="//ul[@class='user-nav ng-tns-c39-0']/li/following-sibling::li//span[.='admin']")private WebElement AdminLnk;
 	
 	@FindBy(xpath="(//div[@class='ng-tns-c50-1'])[5]")private WebElement PowerBtn;
+	
+	@FindBy(xpath="(//div[@class='col-md-6 second-row-col-six-two ng-tns-c50-1']/div//button[@class='btn mt-3 ng-tns-c50-1'])[4]")private WebElement SchemeSubriptionPowerBtn;
 	
 	@FindBy(xpath="//img[@src='../../../assets/imgs/Heart.png']")private WebElement WishlistBtn;
 	
@@ -101,6 +104,8 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 		Thread.sleep(2000);
 		PowerBtn.click();
 		driver.switchTo().alert().accept();
+		
+
 	}
     
 	 /**
@@ -111,6 +116,12 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 		AdminLnk.click();
 	}
 	
+	public void schemesSubscriptionLogoutOfApplication(WebDriver driver)
+	{	
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()",SchemeSubriptionPowerBtn);
+		driver.switchTo().alert().accept();
+	}
 
 }
  

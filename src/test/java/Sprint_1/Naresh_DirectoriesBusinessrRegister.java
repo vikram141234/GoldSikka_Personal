@@ -1,4 +1,4 @@
-package Sample;
+package Sprint_1;
 
 import java.awt.AWTException;
 import java.awt.Robot;

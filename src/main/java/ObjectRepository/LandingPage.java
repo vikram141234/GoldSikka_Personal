@@ -31,6 +31,8 @@ public class LandingPage {
 	
 	@FindBy(xpath="//span[.='Booking Account']")private WebElement BookingAccountLnk;
 	
+	@FindBy(xpath="//div[@class='text-center']/following-sibling::div[contains(.,'₹ ')]")private WebElement TotalWalletBalence;
+	
 	@FindBy(xpath="//span[.='Passbook']")private WebElement PassbookLnk;
 	
 	@FindBy(xpath="//span[.='Ecommerce']")private WebElement EcommerceLnk;
@@ -109,6 +111,10 @@ public class LandingPage {
 		return BookingAccountLnk;
 	}
 
+	public WebElement getTotalWalletBalence() {
+		return TotalWalletBalence;
+	}
+
 	public WebElement getPassbookLnk() {
 		return PassbookLnk;
 	}
@@ -182,10 +188,24 @@ public class LandingPage {
 		GoldSuvidhaLnk.click();
 	}
 	
-	public void clickOnBookingAccountLnk()
+	public void clickOnBookingAccountLnk(WebDriver driver)
 	{
 		BookingAccountLnk.click();
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(TotalWalletBalence));
+		String TotalBal = TotalWalletBalence.getText();
+		System.out.println(TotalBal);
 	}
+	
+	
+//	public void viewBookingAccountBalance(WebDriver driver)
+//	{
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//		wait.until(ExpectedConditions.elementToBeClickable(TotalWalletBalence));
+//		String TotalBal = TotalWalletBalence.getText();
+//		System.out.println(TotalBal);
+//		
+//	}
 	
 	public void clickOnPassbookLnk()
 	{

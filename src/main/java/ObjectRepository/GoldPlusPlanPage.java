@@ -5,6 +5,8 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +19,8 @@ import GenericUtility.WebDriverUtility;
 
 public class GoldPlusPlanPage {
 
+	@FindBy(xpath="")private WebElement TotalWalletBalence;
+	
 	@FindBy(xpath="//select[@formcontrolname='amount']")private WebElement AmountDrpDwn;
     
     @FindBy(xpath="//select[@placeholder='Months']")private WebElement MonthsDrpDwn;
@@ -25,11 +29,13 @@ public class GoldPlusPlanPage {
     
     @FindBy(xpath="//input[@placeholder='Enter amount']")private WebElement EnterAmountEdt;
     
-    @FindBy(xpath="//input[@formcontrolname='agree']")private WebElement TermsAndConditionsCheckBox;
-    
     @FindBy(xpath="//input[@placeholder='Enter coupon code']")private WebElement CouponCodeEdt;
     
+    @FindBy(xpath="//input[@formcontrolname='agree']")private WebElement TermsAndConditionsCheckBox;
+    
     @FindBy(xpath="//span[.=' Coupon List ']")private WebElement CouponCodeListButton;
+    
+    @FindBy(xpath="//div[@class='card d-block mt-4 mb-4 ng-star-inserted']/descendant::div/descendant::table/descendant::td[.='rBqmLEuL']")private WebElement InsideCouponCodeList;
     
     @FindBy(xpath="//button[.='Apply']")private WebElement ApplyBtn;
     
@@ -41,7 +47,9 @@ public class GoldPlusPlanPage {
     
     @FindBy(xpath="//input[@id='contact']")private WebElement MobileNumberEdt;
     
-    @FindBy(xpath="//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")private WebElement ProceedBtn;
+    @FindBy(xpath="//button[@class='svelte-s8db8t']")private WebElement ProceedBtn;
+    //button[@class='svelte-s8db8t']  both are proceed button scripts
+    //div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']
     
     @FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
     
@@ -218,12 +226,16 @@ public class GoldPlusPlanPage {
 
 	public void goldPlusPlanPage(WebDriver driver) throws Exception
 	{
+		
 		Select s = new Select(AmountDrpDwn);
-		s.selectByValue("1000");
+		s.selectByValue("2000");
+		//
 		Select ss = new Select(MonthsDrpDwn);
 		ss.selectByVisibleText("12 Months");
+		//
 		UseBookingAccountCheckBox.click();
-		EnterAmountEdt.sendKeys("1000");
+		EnterAmountEdt.sendKeys("2000");
+		//
 		TermsAndConditionsCheckBox.click();
 		
 		while(true)
@@ -241,7 +253,6 @@ public class GoldPlusPlanPage {
 				r.keyPress(KeyEvent.VK_PAGE_DOWN);
 			}
 		}
-		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(AfterClickOnStartSubscriptionBtnFrame));
 		
@@ -274,13 +285,13 @@ public class GoldPlusPlanPage {
 			}
 		}
 		String SuccessMsg = WindowSuccessBtn.getText();
-		System.out.println("Subscription is "+SuccessMsg);
+		System.out.println("Subscribed "+SuccessMsg+"fully");
 		WindowSuccessBtn.click();
 		
 		driver.switchTo().window(ParentWin);
 		
-		
-
+        		
 	}
 	
 }
+//, String SelectAmount, String Months, String EnterAmount , String MobileNumber
