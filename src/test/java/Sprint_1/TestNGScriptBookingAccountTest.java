@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import GenericUtility.Baseclass;
+import GenericUtility.BaseClass;
 import ObjectRepository.BookingAccountPage;
 import ObjectRepository.BookingAccountPhNoFramePage;
 import ObjectRepository.LandingPage;
 
-public class TestNGScriptBookingAccount extends Baseclass{
+public class TestNGScriptBookingAccountTest extends BaseClass{
 
 	@Test
 	public void bookingAccountaddingBal() throws InterruptedException 
@@ -22,8 +22,6 @@ public class TestNGScriptBookingAccount extends Baseclass{
 		LandingPage lPage = new LandingPage(driver);
 		System.out.println("Before adding amount to booking account");
 		lPage.clickOnBookingAccountLnk(driver);
-        
-//		lPage.viewBookingAccountBalance(driver);
 		
 		BookingAccountPage bap = new BookingAccountPage(driver);
 		bap.depositMoneyInBookingAccount(driver);

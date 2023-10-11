@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.Test;
-import GenericUtility.Baseclass;
+import GenericUtility.BaseClass;
 import GenericUtility.ConstantsUtility;
 import GenericUtility.SchemesSubscriptionBaseClass;
 import ObjectRepository.DashboardPage;
@@ -26,7 +26,7 @@ public class PomExampleScriptScheme extends SchemesSubscriptionBaseClass {
 	  sPage.subscribeAScheme();
 	
       GoldPlusPlanPage gPage = new GoldPlusPlanPage(driver);
-      gPage.goldPlusPlanPage(driver);//we have to parameterize the below args
+      gPage.goldPlusPlanWithCoupons(driver);//we have to parameterize the below args
 	 
     
       

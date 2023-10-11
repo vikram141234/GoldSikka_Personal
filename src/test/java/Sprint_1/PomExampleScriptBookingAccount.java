@@ -9,13 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import GenericUtility.Baseclass;
+import GenericUtility.BaseClass;
 import ObjectRepository.BookingAccountPage;
 import ObjectRepository.BookingAccountPhNoFramePage;
 import ObjectRepository.LandingPage;
 
 
-public class PomExampleScriptBookingAccount extends Baseclass {
+public class PomExampleScriptBookingAccount extends BaseClass {
 		
 		@Test
 		public void addingAmountIntoBookingAccount() throws Exception

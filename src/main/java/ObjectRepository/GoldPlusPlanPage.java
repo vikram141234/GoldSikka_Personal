@@ -33,7 +33,7 @@ public class GoldPlusPlanPage {
     
     @FindBy(xpath="//input[@formcontrolname='agree']")private WebElement TermsAndConditionsCheckBox;
     
-    @FindBy(xpath="//span[.=' Coupon List ']")private WebElement CouponCodeListButton;
+    @FindBy(xpath="//span[.=' Coupon List ']")private WebElement CouponListBtn;
     
     @FindBy(xpath="//div[@class='card d-block mt-4 mb-4 ng-star-inserted']/descendant::div/descendant::table/descendant::td[.='rBqmLEuL']")private WebElement InsideCouponCodeList;
     
@@ -51,9 +51,42 @@ public class GoldPlusPlanPage {
     //button[@class='svelte-s8db8t']  both are proceed button scripts
     //div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']
     
-    @FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
+    @FindBy(xpath="//div[text()='Wallet - PhonePe']")private WebElement PhonepeLnk;
     
-    @FindBy(xpath="//label[@for='bank-radio-ICIC']")private WebElement IciciBankLnk;
+    //
+    @FindBy(xpath="//div[.='Card']")private WebElement CardLnk;
+    
+    @FindBy(xpath="//input[@id='card_number']")private WebElement CardNoEdt;
+    
+    @FindBy(xpath="//input[@id='card_expiry']")private WebElement CardExpiryEdt;
+    
+    @FindBy(xpath="//input[@id='card_name']")private WebElement CardHolderNameEdt;
+    
+    @FindBy(xpath="//input[@id='card_cvv']")private WebElement CardCvvEdt;
+    
+    @FindBy(xpath="//span[@class='checkbox svelte-1b61qmd']")private WebElement SaveCardChckBox;
+    
+    @FindBy(xpath="//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']//button[@class='svelte-s8db8t']")private WebElement CardPayNowBtn;
+    
+    @FindBy(xpath="//button[.='Success']")private WebElement CardWindowSuccesBtn;
+    //success popup
+    @FindBy(xpath="//button[.='Failure']")private WebElement CardWindowFailureBtn;
+    //failure popup
+    @FindBy(xpath="//button[.='Pay and Save Card']")private WebElement PayAndSaveCardBtn;
+    
+    @FindBy(xpath="//button[.='Pay without Saving Card']")private WebElement PayWithoutSavingBtn;
+    
+    @FindBy(xpath="//button[.='Pay With PayPal']")private WebElement PayWithPayPalBtn;
+    
+    @FindBy(xpath="//span[.='Cancel']")private WebElement CancelBtn;
+    //
+    
+    @FindBy(xpath="//div[.='UPI / QR']")private WebElement UpiLnk;
+   
+    //
+    @FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
+        
+    @FindBy(xpath="//div[.='ICICI']]")private WebElement IciciBankLnk;
     
     @FindBy(xpath="//div[.='Axis']")private WebElement AxisBankLnk;
     
@@ -73,6 +106,27 @@ public class GoldPlusPlanPage {
    	
    	@FindBy(xpath="//button[.='Success']")private WebElement WindowSuccessBtn;
     
+   	//
+   	@FindBy(xpath="//div[.='Wallet']")private WebElement WalletLnk;
+   	
+   	@FindBy(xpath="//span[.='PhonePe']")private WebElement WPhonepeLnk;
+   	
+   	@FindBy(xpath="//span[.='Amazon Pay']")private WebElement AmazonPayLnk;
+   	
+   	@FindBy(xpath="//span[.='Bajaj Pay']")private WebElement BajajPayLnk;
+   	
+   	@FindBy(xpath="//span[.='Mobikwik']")private WebElement MobikwikLnk;
+   	
+   	@FindBy(xpath="//span[.='Freecharge']")private WebElement FreechargeLnk;
+   	
+   	@FindBy(xpath="//span[.='Airtel Payments Bank']")private WebElement AirtelPaymentLnk;
+   	
+   	@FindBy(xpath="//span[.='//span[.='Ola Money (Postpaid + Wallet)']']")private WebElement OlaPaymentLnk;
+   	
+   	@FindBy(xpath="//span[.='JioMoney']")private WebElement JioMneyLnk;
+   	
+   	@FindBy(xpath="//span[.='PayPal']")private WebElement PaypalLnk;
+   	   	
 	public GoldPlusPlanPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -117,7 +171,7 @@ public class GoldPlusPlanPage {
 
 
 	public WebElement getCouponCodeListButton() {
-		return CouponCodeListButton;
+		return CouponListBtn;
 	}
 
 
@@ -235,6 +289,23 @@ public class GoldPlusPlanPage {
 		UseBookingAccountCheckBox.click();
 		EnterAmountEdt.sendKeys(EnterAmount);
 		TermsAndConditionsCheckBox.click();
+//		CouponListBtn.click();
+//		WebElement frame = driver.findElement(By.xpath("//iframe[@id='ssIFrame_google']"));
+//		driver.switchTo().frame(frame);
+//		
+//		WebElement clickEle = driver.findElement(By.xpath("(//td[.='150.00']/../following-sibling::tr/td[.='100.00']/following-sibling::td/following-sibling::td//following-sibling::td[.='11-11-2023']/following-sibling::td/button[@type='button'])[1]"));
+//		for(;;)
+//		{
+//		try 
+//		{
+//			clickEle.click();
+//			break;
+//		}
+//		catch(Exception e)
+//		{
+//			Robot r = new Robot();
+//			r.keyPress(KeyEvent.VK_PAGE_DOWN);
+//		}}
 		
 		while(true)
 		{
@@ -358,6 +429,91 @@ public class GoldPlusPlanPage {
         		
 	}
 
+	public void goldPlusPlanWithCoupons(WebDriver driver) throws Exception
+	{
+		
+		Select s = new Select(AmountDrpDwn);
+		s.selectByValue("1000");
+		Select ss = new Select(MonthsDrpDwn);
+		ss.selectByVisibleText("12 Months");
+		Thread.sleep(1000);
+		UseBookingAccountCheckBox.click();
+		EnterAmountEdt.sendKeys("1000");
+		TermsAndConditionsCheckBox.click();
+		CouponListBtn.click();
+//		WebElement frame = driver.findElement(By.xpath("//iframe[@id='ssIFrame_google']"));
+//		driver.switchTo().frame(frame);
+//		
+//		WebElement clickEle = driver.findElement(By.xpath("(//td[.='150.00']/../following-sibling::tr/td[.='100.00']/following-sibling::td/following-sibling::td//following-sibling::td[.='11-11-2023']/following-sibling::td/button[@type='button'])[1]"));
+//		for(;;)
+//		{                                             //     To go coupon list page
+//		try 
+//		{
+//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+//			wait.until(ExpectedConditions.elementToBeClickable(clickEle)).click();     //.click();
+//			break;
+//		}
+//		catch(Exception e)
+//		{
+//			Robot r = new Robot();
+//			r.keyPress(KeyEvent.VK_PAGE_DOWN);
+//		}}
+		
+		while(true)
+		{
+			try 
+			{
+				WebDriverUtility wUtil = new WebDriverUtility();
+				wUtil.waitForElementToBeVisible(driver, StartSubscriptionBtn);
+				StartSubscriptionBtn.click();
+			    break;
+			} 
+			catch (Exception e) 
+			{
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+			}
+		}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(AfterClickOnStartSubscriptionBtnFrame));
+		
+		driver.switchTo().frame(AfterClickOnStartSubscriptionBtnFrame);
+		
+		MobileNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		
+		while(true)
+		{
+			try {
+				NetBankingLnk.click();
+				break;
+			} catch (Exception e) {
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+				r.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			}
+		}
+		IciciBankLnk.click();
+		String ParentWin = driver.getWindowHandle();
+		PayNowBtn.click();
+		Set<String> ChildWin = driver.getWindowHandles();
+		
+		for(String Child : ChildWin)
+		{
+			if(!ParentWin.equals(Child))
+			{
+			   driver.switchTo().window(Child);
+			}
+		}
+		String SuccessMsg = WindowSuccessBtn.getText();
+		System.out.println("Subscribed "+SuccessMsg+"fully");
+		WindowSuccessBtn.click();
+		
+		driver.switchTo().window(ParentWin);
+		
+        		
+	}
+	
 	
 	
 }

@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint_1.TestNGScriptSchemes">
+      <class name="Sprint_1.PomExampleScriptScheme">
         <methods>
           <include name="acConfig"/>
-          <include name="schemeSubscription1000Rupees"/>
           <include name="bmConfig"/>
+          <include name="createScheme"/>
           <include name="amConfig"/>
           <include name="bcConfig"/>
           <include name="asConfig"/>
           <include name="bsConfig"/>
         </methods>
-      </class> <!-- Sprint_1.TestNGScriptSchemes -->
+      </class> <!-- Sprint_1.PomExampleScriptScheme -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

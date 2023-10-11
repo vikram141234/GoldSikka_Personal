@@ -19,7 +19,7 @@ import ObjectRepository.DashboardPage;
 import ObjectRepository.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Baseclass {
+public class BaseClass {
 
 	public JavaUtility jUtility=new JavaUtility();
 	public WebDriverUtility wUtility=new WebDriverUtility();
