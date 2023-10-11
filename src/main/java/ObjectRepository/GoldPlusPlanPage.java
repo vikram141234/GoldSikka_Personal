@@ -47,7 +47,7 @@ public class GoldPlusPlanPage {
     
     @FindBy(xpath="//input[@id='contact']")private WebElement MobileNumberEdt;
     
-    @FindBy(xpath="//button[@class='svelte-s8db8t']")private WebElement ProceedBtn;
+    @FindBy(xpath="//div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']")private WebElement ProceedBtn;
     //button[@class='svelte-s8db8t']  both are proceed button scripts
     //div[@class='cta-container has-tooltip svelte-s8db8t reduce-amount-size no-shadow']
     
@@ -224,18 +224,83 @@ public class GoldPlusPlanPage {
 
 
 
+	public void goldPlusPlanPage(WebDriver driver,  String SelectAmount, String Months, String EnterAmount , String MobileNumber) throws Exception
+	{
+		
+		Select s = new Select(AmountDrpDwn);
+		s.selectByValue(SelectAmount);
+		Select ss = new Select(MonthsDrpDwn);
+		ss.selectByVisibleText(Months);
+		Thread.sleep(1000);
+		UseBookingAccountCheckBox.click();
+		EnterAmountEdt.sendKeys(EnterAmount);
+		TermsAndConditionsCheckBox.click();
+		
+		while(true)
+		{
+			try 
+			{
+				WebDriverUtility wUtil = new WebDriverUtility();
+				wUtil.waitForElementToBeVisible(driver, StartSubscriptionBtn);
+				StartSubscriptionBtn.click();
+			    break;
+			} 
+			catch (Exception e) 
+			{
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+			}
+		}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(AfterClickOnStartSubscriptionBtnFrame));
+		
+		driver.switchTo().frame(AfterClickOnStartSubscriptionBtnFrame);
+		
+		MobileNumberEdt.sendKeys(MobileNumber);
+		ProceedBtn.click();
+		
+		while(true)
+		{
+			try {
+				NetBankingLnk.click();
+				break;
+			} catch (Exception e) {
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_PAGE_DOWN);
+				r.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			}
+		}
+		IciciBankLnk.click();
+		String ParentWin = driver.getWindowHandle();
+		PayNowBtn.click();
+		Set<String> ChildWin = driver.getWindowHandles();
+		
+		for(String Child : ChildWin)
+		{
+			if(!ParentWin.equals(Child))
+			{
+			   driver.switchTo().window(Child);
+			}
+		}
+		String SuccessMsg = WindowSuccessBtn.getText();
+		System.out.println("Subscribed "+SuccessMsg+"fully");
+		WindowSuccessBtn.click();
+		
+		driver.switchTo().window(ParentWin);
+		
+        		
+	}
+    
 	public void goldPlusPlanPage(WebDriver driver) throws Exception
 	{
 		
 		Select s = new Select(AmountDrpDwn);
-		s.selectByValue("2000");
-		//
+		s.selectByValue("1000");
 		Select ss = new Select(MonthsDrpDwn);
 		ss.selectByVisibleText("12 Months");
-		//
+		Thread.sleep(1000);
 		UseBookingAccountCheckBox.click();
-		EnterAmountEdt.sendKeys("2000");
-		//
+		EnterAmountEdt.sendKeys("1000");
 		TermsAndConditionsCheckBox.click();
 		
 		while(true)
@@ -292,6 +357,7 @@ public class GoldPlusPlanPage {
 		
         		
 	}
+
+	
 	
 }
-//, String SelectAmount, String Months, String EnterAmount , String MobileNumber

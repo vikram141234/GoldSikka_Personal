@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="Test(failed)">
+    <classes>
+      <class name="Sprint_1.MultipleSchemesSubscriptionTest">
+        <methods>
+          <include name="schemeSubscription3000Rupees"/>
+          <include name="schemeSubscription2500Rupees"/>
+          <include name="schemeSubscription6000Rupees"/>
+          <include name="schemeSubscription3500Rupees"/>
+          <include name="schemeSubscription2000Rupees"/>
+          <include name="bcConfig"/>
+          <include name="schemeSubscription4500Rupees"/>
+          <include name="schemeSubscription7500Rupees"/>
+          <include name="schemeSubscription1500Rupees"/>
+          <include name="schemeSubscription5500Rupees"/>
+          <include name="acConfig"/>
+          <include name="schemeSubscription9000Rupees"/>
+          <include name="schemeSubscription9500Rupees"/>
+          <include name="schemeSubscription6500Rupees"/>
+          <include name="bmConfig"/>
+          <include name="schemeSubscription8000Rupees"/>
+          <include name="amConfig"/>
+          <include name="schemeSubscription8500Rupees"/>
+          <include name="asConfig"/>
+          <include name="schemeSubscription4000Rupees"/>
+          <include name="bsConfig"/>
+          <include name="schemeSubscription7000Rupees"/>
+          <include name="schemeSubscription5000Rupees"/>
+        </methods>
+      </class> <!-- Sprint_1.MultipleSchemesSubscriptionTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
