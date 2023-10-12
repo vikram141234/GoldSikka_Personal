@@ -1,17 +1,19 @@
-package Sprint_1;
+package Sprint_1_Scheme_Subscription;
 
 import org.testng.annotations.Test;
+
+import GenericUtility.BaseClass;
 import GenericUtility.ExcelFileUtility;
-import GenericUtility.SchemesSubscriptionBaseClass;
 import ObjectRepository.GoldPlusPlanPage;
 import ObjectRepository.LandingPage;
 import ObjectRepository.SchemesPage;
 
-public class MultipleSchemesSubscriptionTest extends SchemesSubscriptionBaseClass{
+public class MultipleSchemeSubscriptionsWithAllAmountsTest extends BaseClass {
 
 	@Test
 	public void schemeSubscription1000Rupees() throws Exception
 	{
+
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
 		  String SelectAmount = eUtil.readDataFromExcel("Scheme",1,1);
@@ -29,8 +31,6 @@ public class MultipleSchemesSubscriptionTest extends SchemesSubscriptionBaseClas
 		
 	      GoldPlusPlanPage gPage = new GoldPlusPlanPage(driver);
 	      gPage.goldPlusPlanPage(driver, SelectAmount, Months, EnterAmount , MobileNumber);//we have to parameterize the below args
-	      
-	      
 	}
 	
 	@Test
@@ -422,31 +422,5 @@ public class MultipleSchemesSubscriptionTest extends SchemesSubscriptionBaseClas
 		
 	      GoldPlusPlanPage gPage = new GoldPlusPlanPage(driver);
 	      gPage.goldPlusPlanPage(driver, SelectAmount, Months, EnterAmount , MobileNumber);//we have to parameterize the below args
-	}
-	
-	
-	
 }
-
-//FileInputStream fis = new FileInputStream(ConstantsUtility.excelfilepath);
-//Workbook book = WorkbookFactory.create(fis);
-//Sheet sh = book.getSheet("Scheme");
-//Row rw = sh.getRow(1);
-//Cell ce1 = rw.getCell(1);
-//String SelectAmount = ce1.getStringCellValue();
-//System.out.println(SelectAmount);
-//
-//Row rw2 = sh.getRow(2);
-//Cell ce2 = rw2.getCell(1);
-//String Months = ce2.getStringCellValue();
-//System.out.println(Months);
-//
-//Row rw3 = sh.getRow(3);
-//Cell ce3 = rw3.getCell(1);
-//String EnterAmount = ce3.getStringCellValue();
-//System.out.println(EnterAmount);
-//
-//Row rw4 = sh.getRow(4);
-//Cell ce4 = rw4.getCell(1);
-//String MobileNumber = ce4.getStringCellValue();
-//System.out.println(MobileNumber);
+}

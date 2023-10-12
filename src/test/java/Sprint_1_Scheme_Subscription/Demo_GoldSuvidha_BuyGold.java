@@ -1,4 +1,4 @@
-package Sprint_1;
+package Sprint_1_Scheme_Subscription;
 
 import java.io.IOException;
 import java.time.Duration;

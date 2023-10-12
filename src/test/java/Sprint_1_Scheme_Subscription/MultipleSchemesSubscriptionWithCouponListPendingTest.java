@@ -1,4 +1,4 @@
-package Sprint_1;
+package Sprint_1_Scheme_Subscription;
 
 import org.testng.annotations.Test;
 
