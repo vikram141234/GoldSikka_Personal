@@ -1,5 +1,5 @@
 package Sprint_1_Scheme_Subscription;
-
+ 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -46,8 +46,7 @@ public class Demo_CreateAnAccountLoginCreateSchemeLogout {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
-		
-		
+				
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(URL);

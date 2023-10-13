@@ -19,7 +19,17 @@ public class BookingAccountPhNoFramePage {
 	
 	@FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
 	
+@FindBy(xpath="//div[.='HDFC']")private WebElement HDFCBankLnk;
+	
 	@FindBy(xpath="//div[.='ICICI']")private WebElement IciciBankLnk;
+	
+	@FindBy(xpath="//div[.='Axis']")private WebElement AxisBankLnk;
+	
+	@FindBy(xpath="//div[.='Kotak']")private WebElement KotakBankLnk;
+	
+	@FindBy(xpath="//div[.='Yes Bank']")private WebElement YesBankLnk;
+	
+	@FindBy(xpath="//div[.='BOB']")private WebElement BOBBankLnk;
 	
 	@FindBy(xpath="//button[.='Pay Now']")private WebElement PayNowBtn;
 
@@ -57,5 +67,63 @@ public class BookingAccountPhNoFramePage {
 		ProceedBtn.click();
 		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
 		IciciBankLnk.click();
+	
 	}
+	
+	public void enterPhoneNumberAndHdfcBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		HDFCBankLnk.click();
+	}
+	
+	public void enterPhoneNumberAndIciciBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		IciciBankLnk.click();
+	}
+	
+	public void enterPhoneNumberAndAxisBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		AxisBankLnk.click();
+	}
+	
+	public void enterPhoneNumberAndKotakBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		KotakBankLnk.click();
+	}
+	
+	public void enterPhoneNumberAndYesBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		YesBankLnk.click();
+	}
+	
+	public void enterPhoneNumberAndBOBBankBtnClickOnProceed(WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		PhoneNumberEdt.sendKeys("8686184458");
+		ProceedBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
+		BOBBankLnk.click();
+	}
+	
+	
+	
 }

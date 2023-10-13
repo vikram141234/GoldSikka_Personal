@@ -5,6 +5,8 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -68,6 +70,14 @@ public class BaseClass {
 			    WebDriverManager.firefoxdriver().setup();
 				driver=new FirefoxDriver(options); 
 				System.out.println("Firefox Browser Launched Successfully");
+			}
+			else if(BROWSER.equalsIgnoreCase("Edge"))
+			{
+				EdgeOptions options = new EdgeOptions();
+		        options.addArguments("--disable-settings-window");
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver(options);
+				System.out.println("Edge Browser Launched Successfully");
 			}
 			else 
 			{

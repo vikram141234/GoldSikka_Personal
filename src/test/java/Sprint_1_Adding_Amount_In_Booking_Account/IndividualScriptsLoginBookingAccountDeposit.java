@@ -1,4 +1,4 @@
-package Sprint_1_Scheme_Subscription;
+package Sprint_1_Adding_Amount_In_Booking_Account;
 
 import java.time.Duration;
 

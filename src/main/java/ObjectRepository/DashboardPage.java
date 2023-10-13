@@ -101,7 +101,8 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	 */
 	public void logoutOfApplication(WebDriver driver) throws Exception
 	{	
-		Thread.sleep(2000);
+		WebDriverUtility wUtil = new WebDriverUtility();
+		wUtil.waitForElementToBeVisible(driver, PowerBtn);
 		PowerBtn.click();
 		driver.switchTo().alert().accept();
 		

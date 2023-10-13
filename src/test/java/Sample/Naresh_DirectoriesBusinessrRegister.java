@@ -1,4 +1,4 @@
-package Sprint_1_Scheme_Subscription;
+package Sample;
 
 import java.awt.AWTException;
 import java.awt.Robot;

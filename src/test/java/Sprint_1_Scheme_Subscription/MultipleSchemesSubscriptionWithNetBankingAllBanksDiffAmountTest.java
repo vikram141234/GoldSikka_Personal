@@ -7,17 +7,17 @@ import ObjectRepository.GoldPlusPlanPage;
 import ObjectRepository.LandingPage;
 import ObjectRepository.SchemesPage;
 
-public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends SchemesSubscriptionBaseClass{
+public class MultipleSchemesSubscriptionWithNetBankingAllBanksDiffAmountTest extends SchemesSubscriptionBaseClass{
 
 	@Test
-	public void schemeSubscriptionHdfc1000Rupees() throws Exception
+	public void schemeSubscriptionNetBankingHdfc1000Rupees() throws Exception
 	{
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
 		  String SelectAmount = eUtil.readDataFromExcel("Scheme",1,1);
 		  String Months = eUtil.readDataFromExcel("Scheme",2,1);
 		  String EnterAmount = eUtil.readDataFromExcel("Scheme",3,1);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",4,1);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",5,1);
 		  
 		  System.out.println(SelectAmount+" Scheme Subscription Successful");
 		  
@@ -34,17 +34,15 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 	}
 	
 	@Test
-	public void schemeSubscriptionIcici1500Rupees() throws Exception
+	public void schemeSubscriptionNetBankingIcici1500Rupees() throws Exception
 	{
 
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
-		  String SelectAmount = eUtil.readDataFromExcel("Scheme",6,1);
-		  String Months = eUtil.readDataFromExcel("Scheme",7,1);
-		  String EnterAmount = eUtil.readDataFromExcel("Scheme",8,1);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",9,1);
-		  
-		  System.out.println(SelectAmount+" Scheme Subscription Successful");
+		  String SelectAmount = eUtil.readDataFromExcel("Scheme",7,1);
+		  String Months = eUtil.readDataFromExcel("Scheme",8,1);
+		  String EnterAmount = eUtil.readDataFromExcel("Scheme",9,1);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",11,1);
 		  
 		  LandingPage lPage = new LandingPage(driver);
 	      lPage.clickOnSchemesLnk(driver);
@@ -56,16 +54,18 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 	      gPage.goldPlusPlanPageIcici1500(driver, SelectAmount, Months, EnterAmount , MobileNumber);//we have to parameterize the below args
 	}
 	
+	
+	
 	@Test
-	public void schemeSubscriptionAxis2000Rupees() throws Exception
+	public void schemeSubscriptionNetBankingAxis2000Rupees() throws Exception
 	{
 
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
-		  String SelectAmount = eUtil.readDataFromExcel("Scheme",11,1);
-		  String Months = eUtil.readDataFromExcel("Scheme",12,1);
-		  String EnterAmount = eUtil.readDataFromExcel("Scheme",13,1);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",14,1);
+		  String SelectAmount = eUtil.readDataFromExcel("Scheme",13,1);
+		  String Months = eUtil.readDataFromExcel("Scheme",14,1);
+		  String EnterAmount = eUtil.readDataFromExcel("Scheme",15,1);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",17,1);
 		  
 		  System.out.println(SelectAmount+" Scheme Subscription Successful");
 		  
@@ -80,15 +80,15 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 	}
 	
 	@Test
-	public void schemeSubscriptionKotak2500Rupees() throws Exception
+	public void schemeSubscriptionNetBankingKotak2500Rupees() throws Exception
 	{
 
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
-		  String SelectAmount = eUtil.readDataFromExcel("Scheme",16,1);
-		  String Months = eUtil.readDataFromExcel("Scheme",17,1);
-		  String EnterAmount = eUtil.readDataFromExcel("Scheme",18,1);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",19,1);
+		  String SelectAmount = eUtil.readDataFromExcel("Scheme",19,1);
+		  String Months = eUtil.readDataFromExcel("Scheme",20,1);
+		  String EnterAmount = eUtil.readDataFromExcel("Scheme",21,1);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",23,1);
 		  
 		  System.out.println(SelectAmount+" Scheme Subscription Successful");
 		  
@@ -103,15 +103,15 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 	}
 	
 	@Test
-	public void schemeSubscriptionYes3000Rupees() throws Exception
+	public void schemeSubscriptionNetBankingYes3000Rupees() throws Exception
 	{
 
 		  
 	      ExcelFileUtility eUtil = new ExcelFileUtility();
-		  String SelectAmount = eUtil.readDataFromExcel("Scheme",21,1);
-		  String Months = eUtil.readDataFromExcel("Scheme",22,1);
-		  String EnterAmount = eUtil.readDataFromExcel("Scheme",23,1);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",24,1);
+		  String SelectAmount = eUtil.readDataFromExcel("Scheme",25,1);
+		  String Months = eUtil.readDataFromExcel("Scheme",26,1);
+		  String EnterAmount = eUtil.readDataFromExcel("Scheme",27,1);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",29,1);
 		  
 		  System.out.println(SelectAmount+" Scheme Subscription Successful");
 		  
@@ -126,7 +126,7 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 	}
 	
 	@Test
-	public void schemeSubscriptionBOB3500Rupees() throws Exception
+	public void schemeSubscriptionNetBankingBOB3500Rupees() throws Exception
 	{
 
 		  
@@ -134,7 +134,7 @@ public class MultipleSchemesSubscriptionWithAllBanksDiffAmountTest extends Schem
 		  String SelectAmount = eUtil.readDataFromExcel("Scheme",1,4);
 		  String Months = eUtil.readDataFromExcel("Scheme",2,4);
 		  String EnterAmount = eUtil.readDataFromExcel("Scheme",3,4);
-		  String MobileNumber = eUtil.readDataFromExcel("Scheme",4,4);
+		  String MobileNumber = eUtil.readDataFromExcel("Scheme",5,4);
 		  
 		  System.out.println(SelectAmount+" Scheme Subscription Successful");
 		  
