@@ -82,17 +82,36 @@ public class ExcelFileUtility {
 		return data;
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
+	
+	public static String[] getSingleColumnData(String filePath, String sheetNamee, int columnIndex) 
+	{
+        String[] dataa = null;
+        try 
+        {
+            FileInputStream fis = new FileInputStream(filePath);
+            Workbook book = WorkbookFactory.create(fis);
+            Sheet sheet = book.getSheet(sheetNamee);
+
+            int rowCount = sheet.getLastRowNum();
+
+            dataa = new String[rowCount];
+
+            for (int i = 1; i <= rowCount; i++) 
+            {
+                Row row = sheet.getRow(i);
+                dataa[i - 1] = row.getCell(columnIndex).toString();
+            }
+
+            book.close();
+        } 
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dataa;
+    }
+		
+		
 	
 
 }

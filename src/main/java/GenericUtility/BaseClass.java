@@ -40,7 +40,7 @@ public class BaseClass {
 		public void bcConfig() throws IOException
 		{  
 			String BROWSER = pUtility.readDataFromPropertyFile("browser");
-			String URL = pUtility.readDataFromPropertyFile("url");
+			String URL = pUtility.readDataFromPropertyFile("stgurl");
 			
 			
 			

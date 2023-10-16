@@ -19,7 +19,9 @@ public class BookingAccountPhNoFramePage {
 	
 	@FindBy(xpath="//div[.='Netbanking']")private WebElement NetBankingLnk;
 	
-@FindBy(xpath="//div[.='HDFC']")private WebElement HDFCBankLnk;
+//	@FindBy(xpath="//div[contains(@id,'bank-item-"+BankName+"')]")private WebElement BankNameDynamicLnk;
+	
+    @FindBy(xpath="//div[.='HDFC']")private WebElement HDFCBankLnk;
 	
 	@FindBy(xpath="//div[.='ICICI']")private WebElement IciciBankLnk;
 	
@@ -66,7 +68,7 @@ public class BookingAccountPhNoFramePage {
 		PhoneNumberEdt.sendKeys("8686184458");
 		ProceedBtn.click();
 		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
-		IciciBankLnk.click();
+//		IciciBankLnk.click();
 	
 	}
 	

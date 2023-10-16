@@ -1,10 +1,14 @@
 package ObjectRepository;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import GenericUtility.WebDriverUtility;
 
@@ -14,7 +18,7 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	
 	@FindBy(xpath="//ul[@class='user-nav ng-tns-c39-0']/li/following-sibling::li//span[.='admin']")private WebElement AdminLnk;
 	
-	@FindBy(xpath="(//div[@class='ng-tns-c50-1'])[5]")private WebElement PowerBtn;
+	@FindBy(xpath="//div[@class='col-md-6 second-row-col-six-two ng-tns-c50-1']/div/div[4]")private WebElement PowerBtn;
 	
 	@FindBy(xpath="(//div[@class='col-md-6 second-row-col-six-two ng-tns-c50-1']/div//button[@class='btn mt-3 ng-tns-c50-1'])[4]")private WebElement SchemeSubriptionPowerBtn;
 	
@@ -101,8 +105,8 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	 */
 	public void logoutOfApplication(WebDriver driver) throws Exception
 	{	
-		WebDriverUtility wUtil = new WebDriverUtility();
-		wUtil.waitForElementToBeVisible(driver, PowerBtn);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(PowerBtn));
 		PowerBtn.click();
 		driver.switchTo().alert().accept();
 		

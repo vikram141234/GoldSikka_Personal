@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint_1_Scheme_SubscriptionOldLiveAppl.DepositAmount">
+      <class name="Sprint_1_Scheme_SubscriptionLiveAppl.DataProviderAddingAmountFromDiffBanks">
         <methods>
-          <include name="yesBankDeposit"/>
+          <include name="amConfig"/>
+          <include name="acConfig"/>
+          <include name="asConfig"/>
+          <include name="bsConfig"/>
+          <include name="testWithExcelData" invocation-numbers="1"/>
+          <include name="bmConfig"/>
+          <include name="bcConfig"/>
         </methods>
-      </class> <!-- Sprint_1_Scheme_SubscriptionOldLiveAppl.DepositAmount -->
+      </class> <!-- Sprint_1_Scheme_SubscriptionLiveAppl.DataProviderAddingAmountFromDiffBanks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
