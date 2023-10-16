@@ -17,7 +17,7 @@ import ObjectRepository.LandingPage;
 public class TestNGScriptBookingAccountTest extends BaseClass{
 
 	@Test
-	public void bookingAccountaddingBal() throws InterruptedException 
+	public void bookingAccountaddingBal() throws Exception 
 	{
 		LandingPage lPage = new LandingPage(driver);
 		System.out.println("Before adding amount to booking account");

@@ -91,7 +91,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 			public void amConfig() throws Exception
 			{
 			    DashboardPage dPage = new DashboardPage(driver);
-			    dPage.schemesSubscriptionLogoutOfApplication(driver);
+			    dPage.logoutOfApplication(driver);
 			    System.out.println("Logout Successfully");
 			}
 

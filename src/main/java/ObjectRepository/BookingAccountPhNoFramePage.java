@@ -61,12 +61,13 @@ public class BookingAccountPhNoFramePage {
 	public WebElement getPayNowBtn() {
 		return PayNowBtn;
 	}
-
-	public void enterPhoneNumberAndClickOnProceed(WebDriver driver)
+    //Data Provider
+	public void enterPhoneNumberAndClickOnProceed(WebDriver driver) throws Exception
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		PhoneNumberEdt.sendKeys("8686184458");
 		ProceedBtn.click();
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(NetBankingLnk)).click();
 //		IciciBankLnk.click();
 	

@@ -1,4 +1,4 @@
-package Sprint_1_Scheme_SubscriptionFinal;
+package Sprint_1_Money_Deposit_FinalDataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -31,7 +31,7 @@ import ObjectRepository.LandingPage;
 import freemarker.template.utility.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DepositAmount {
+public class DepositAmountLiveAppl {
 
 	@Test(priority = 1)
 	public void yesBankDeposit() throws InterruptedException, Exception, IOException
@@ -64,12 +64,30 @@ public class DepositAmount {
 		driver.findElement(By.xpath("//input[@placeholder='Email / mobile number']")).sendKeys(USERNAME,Keys.ENTER);
 		driver.findElement(By.xpath("//span[.='Booking Account']")).click();
 		String BeforeAddingAmountToBookingAccount = driver.findElement(By.xpath("//p[contains(.,'₹ ')]")).getText();
+		System.out.println(BeforeAddingAmountToBookingAccount);
 		driver.findElement(By.xpath("//input[@placeholder='Enter amount']")).sendKeys("100000");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		driver.findElement(By.xpath("//div[.='Netbanking']")).click();
+//		WebElement bank = driver.findElement(By.xpath("//div[contains(@id,'bank-item-"+columnValue+"')]"));
 		driver.findElement(By.xpath("//div[.='HDFC']")).click();
-		driver.findElement(By.xpath("//button[.='Pay Now']")).click();
-		driver.findElement(By.xpath("//button[.='Pay Now']")).click();
+		String ParentWin = driver.getWindowHandle();
+		driver.findElement(By.xpath("//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']")).click();
+//		WebElement SuccessMsg = driver.findElement(By.xpath("//button[.='Success']"));
+//		String Msg = SuccessMsg.getText();
+		Set<String> ChildWins = driver.getWindowHandles();
+		for(String Child : ChildWins)
+		{
+			if(!ParentWin.equals(Child))
+			{
+			   driver.switchTo().window(Child);
+			}
+		}
+		WebElement WindowSuccessBtn = driver.findElement(By.xpath("//button[.='Success']"));
+		System.out.println("Subscribed "+WindowSuccessBtn+"fully");
+		WindowSuccessBtn.click();
+		
+		driver.switchTo().window(ParentWin);
+		
 		driver.findElement(By.xpath("//button[.='Pay Now']")).click();
 		driver.findElement(By.xpath("//button[.='Pay Now']")).click();
 		driver.findElement(By.xpath("//button[.='Pay Now']")).click();

@@ -105,6 +105,7 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 	 */
 	public void logoutOfApplication(WebDriver driver) throws Exception
 	{	
+		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(PowerBtn));
 		PowerBtn.click();
@@ -121,12 +122,12 @@ public class DashboardPage extends WebDriverUtility{//Rule-1:Create a seperate c
 		AdminLnk.click();
 	}
 	
-	public void schemesSubscriptionLogoutOfApplication(WebDriver driver)
-	{	
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click()",SchemeSubriptionPowerBtn);
-		driver.switchTo().alert().accept();
-	}
+//	public void schemesSubscriptionLogoutOfApplication(WebDriver driver)
+//	{	
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		js.executeScript("arguments[0].click()",SchemeSubriptionPowerBtn);
+//		driver.switchTo().alert().accept();
+//	}
 
 }
  
