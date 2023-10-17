@@ -38,6 +38,8 @@ public class SellGoldTest {
 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME, Keys.ENTER);
+		
+		
    }
    
    

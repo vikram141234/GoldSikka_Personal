@@ -29,7 +29,7 @@ import ObjectRepository.BookingAccountPage;
 import ObjectRepository.DashboardPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DepositAmountStgAppl {
+public class DepositAmountStgAppl_PASSED {
 
 	@Test
 	public void deposit(/*String BankName*/) throws Exception {

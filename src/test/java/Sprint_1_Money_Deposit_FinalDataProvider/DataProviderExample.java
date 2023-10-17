@@ -17,13 +17,13 @@ public class DataProviderExample {
 	
 	@DataProvider(name = "excelData")
 	public Object[][] testData() {
-		String[] columnData = ExcelFileUtility.getSingleColumnData(ConstantsUtility.excelfilepath, "SchemesBanksDropdown", 0); // Replace
-																															// '0'
-																															// with
-																															// the
-																															// desired
-																															// column
-																															// index.
+		String[] columnData = ExcelFileUtility.getSingleColumnData(ConstantsUtility.excelfilepath, "SchemesBanksDropdown", 0); //| Replace
+																															   // '0'
+																															   // with
+																															   // the
+																															   // desired
+																															   // column
+																															   // index.
 		Object[][] data = new Object[columnData.length][1];
 		for (int i = 0; i < columnData.length; i++) 
 		{

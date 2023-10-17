@@ -1,13 +1,14 @@
 package Sprint_1_Scheme_Subscription;
 
 import org.testng.annotations.Test;
+
+import GenericUtility.BaseClass;
 import GenericUtility.ExcelFileUtility;
-import GenericUtility.SchemesSubscriptionBaseClass;
 import ObjectRepository.GoldPlusPlanPage;
 import ObjectRepository.LandingPage;
 import ObjectRepository.SchemesPage;
 
-public class MultipleSchemesSubscriptionWithNetBankingAllBanksDiffAmountTest extends SchemesSubscriptionBaseClass{
+public class MultipleSchemesSubscriptionWithNetBankingAllBanksDiffAmountTest extends BaseClass{
 
 	@Test
 	public void schemeSubscriptionNetBankingHdfc1000Rupees() throws Exception

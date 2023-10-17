@@ -1,4 +1,4 @@
-package Sprint_1_Adding_Amount_In_Booking_Account;
+package Sprint_1_Adding_Amount_In_Booking_Account__HardCoding;
 
 import java.time.Duration;
 import java.util.Set;

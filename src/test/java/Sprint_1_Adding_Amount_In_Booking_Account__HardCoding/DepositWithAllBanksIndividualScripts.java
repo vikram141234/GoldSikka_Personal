@@ -1,4 +1,4 @@
-package Sprint_1_Adding_Amount_In_Booking_Account;
+package Sprint_1_Adding_Amount_In_Booking_Account__HardCoding;
 
 	import java.time.Duration;
 	import java.util.Set;
@@ -13,7 +13,7 @@ package Sprint_1_Adding_Amount_In_Booking_Account;
 	import ObjectRepository.BookingAccountPhNoFramePage;
 	import ObjectRepository.LandingPage;
 
-	public class DepositWithAllBanks extends BaseClass {
+	public class DepositWithAllBanksIndividualScripts extends BaseClass {
 
 		@Test(priority = 1)
 		public void hdfcBankDeposit() throws InterruptedException

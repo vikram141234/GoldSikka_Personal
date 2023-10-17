@@ -62,9 +62,9 @@ public class DataProviderAddingAmountFromDiffBanks extends BaseClass {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		WebElement frame = driver.findElement(By.xpath("//iframe[@class='razorpay-checkout-frame']"));
-//		driver.switchTo().frame(frame);
+		driver.switchTo().frame(frame);
 		
-		driver.findElement(By.name("contact")).sendKeys("8686184458");
+		driver.findElement(By.xpath("//input[@id='contact']")).sendKeys("8686184458");
 		driver.findElement(By.xpath("//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']")).click();
         
 		Thread.sleep(2000);
