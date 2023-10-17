@@ -36,8 +36,6 @@ package Sprint_1_Adding_Amount_In_Booking_Account__HardCoding;
 			String parentWindow = driver.getWindowHandle();
 			driver.findElement(By.xpath("//div[@class='redesign-v15-cta-wrapper svelte-s8db8t']")).click();
 			
-			BookingAccountPhNoFramePage b = new BookingAccountPhNoFramePage(driver);
-			
 			Set<String> childWindow = driver.getWindowHandles();
 					
 			for(String childids : childWindow)
@@ -126,6 +124,8 @@ package Sprint_1_Adding_Amount_In_Booking_Account__HardCoding;
 			
 
 			System.out.println("After adding amount to booking account");
+			lPage.clickOnBookingAccountLnk(driver);
+			
 			lPage.clickOnBookingAccountLnk(driver);
 		}
 		

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MoneyWithdrawlTest {
 
 	@Test
-	public void withdrawl() throws IOException
+	public void TransferToBankAccount() throws IOException
 	{
 		PropertyFileUtility pUtil = new PropertyFileUtility();
 		String BROWSER = pUtil.readDataFromPropertyFile("browser");
@@ -36,8 +38,20 @@ public class MoneyWithdrawlTest {
 		}
 		else if(BROWSER.equalsIgnoreCase("Firefox"))
 		{
+			
+			FirefoxOptions options = new FirefoxOptions();
+
+	        // Create a FirefoxProfile to manage preferences
+	        FirefoxProfile profile = new FirefoxProfile();
+
+	        // Set a preference to allow or deny location access (false to deny)
+	        profile.setPreference("geo.prompt.testing", true);
+	        profile.setPreference("geo.prompt.testing.allow", false);
+
+	        // Assign the profile to the FirefoxOptions
+	        options.setProfile(profile);
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver(options);
 		}
 		else 
 		{

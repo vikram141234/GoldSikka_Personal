@@ -12,14 +12,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.github.dockerjava.api.command.PullImageCmd;
+
 import GenericUtility.PropertyFileUtility;
 import ObjectRepository.DashboardPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class Demo_LoginBookingAccountDepositMoney {
         
-		@Test
-		public void addingAmountToWallet() throws InterruptedException, Exception {
+//		@Test
+//		public void addingAmountToWallet() throws InterruptedException, Exception {
+		
+		public static void main(String[] args) throws Exception {
 			
 			PropertyFileUtility pUtil = new PropertyFileUtility();
 			String BROWSER = pUtil.readDataFromPropertyFile("browser");
@@ -34,6 +38,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 			}
 			else if(BROWSER.equalsIgnoreCase("Firefox"))
 			{
+				
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 			}
@@ -46,6 +51,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://stg-new-wallet.goldsikka.com/");
 			driver.findElement(By.xpath("//input[@placeholder='Email/Phone Number']")).sendKeys(USERNAME,Keys.ENTER);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//span[.='Booking Account']")).click();
 			driver.findElement(By.xpath("//input[@placeholder='Enter Amount']")).sendKeys("5000",Keys.ENTER);
 			WebElement element = driver.findElement(By.xpath("//iframe[contains(@style,'op')]"));
@@ -58,9 +64,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 			String parentWindow = driver.getWindowHandle();
 			driver.findElement(By.className("svelte-s8db8t")).click();
 			Set<String> childWindow = driver.getWindowHandles();
-			
-			
-//			System.out.println("Child Win Id="+childWindow+"\n Parent Win Id="+parentWindow);
 			
 			for(String childids : childWindow)
 			{
