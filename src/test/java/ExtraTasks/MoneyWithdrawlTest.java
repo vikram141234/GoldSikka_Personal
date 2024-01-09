@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
 import GenericUtility.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -22,7 +23,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MoneyWithdrawlTest {
 
 	@Test
-	public void TransferToBankAccount() throws IOException
+	public void TransferToBankAccountFromWallet() throws IOException
 	{
 		PropertyFileUtility pUtil = new PropertyFileUtility();
 		String BROWSER = pUtil.readDataFromPropertyFile("browser");
@@ -77,17 +78,35 @@ public class MoneyWithdrawlTest {
 				
 		driver.findElement(By.xpath("//button[.='Continue']")).click();
 		
+//		try 
+//		{
+//			String SuccessAlertMsg = driver.findElement(By.xpath("//div[@class='alert alert-success mb-4 pl-5 pt-5 pb-5']")).getText();
+//			System.out.println(SuccessAlertMsg);
+//		} 
+//		catch (Exception e) 
+//		{
+//			String DangerAlertMsg = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+//			System.out.println("Transfer already done as per rules"+DangerAlertMsg);
+//		}
+		
+		
 		try 
 		{
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='alert alert-success mb-4 pl-5 pt-5 pb-5']")));
 			String SuccessAlertMsg = driver.findElement(By.xpath("//div[@class='alert alert-success mb-4 pl-5 pt-5 pb-5']")).getText();
 			System.out.println(SuccessAlertMsg);
 		} 
 		catch (Exception e) 
 		{
 			String DangerAlertMsg = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
-			System.out.println("Transfer already done as per rules"+DangerAlertMsg);
+			System.out.println(DangerAlertMsg);
+		    if(DangerAlertMsg.contains("invalid"))
+		    {
+		    	Assertion a = new Assertion();
+				a.fail();
+		    }
+						
 		}
-		
 		
 		
 		
